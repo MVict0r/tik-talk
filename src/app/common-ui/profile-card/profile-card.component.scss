@@ -1,0 +1,57 @@
+.profile-card {
+  border: 1px solid var(--light-color);
+  border-radius: 3px;
+  padding: 32px 23px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 250px 1fr;
+  grid-gap: 32px;
+}
+
+.avatar-name {
+  display: grid;
+  grid-template-columns: 71px 1fr;
+  grid-gap: 20px;
+}
+.profile-card__avatar {
+  width: 71px;
+  height: 71px;
+  border-radius: 50%;
+}
+.profile-card__name {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  strong {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  span {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+  }
+}
+.profile-card__description {
+  font-weight: 50;
+  font-size: 12px;
+  line-height: 16px;
+}
+.profile-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  height: min-content;
+}
+.skill-tag {
+  border: 1px solid var(--light-color);
+  border-radius: 2px;
+  display: inline;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 3px 8px 0 4px;
+  height: 24px;
+}
