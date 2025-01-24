@@ -1,9 +1,12 @@
 @import url(./styles/_fonts.scss);
+@import url(./styles/_margins.scss);
+
 :root {
   --dark-color: #000;
   --light-color: #fff;
   --primary-color: rgba(174, 122, 255, 1);
   --gray-color: rgba(95, 100, 109, 1);
+  --dark-hover-color: #161616;
 }
 
 *,
@@ -17,13 +20,30 @@
 body {
   background-image: url(/assets/imgs/background.jpg);
   color: var(--light-color);
-  font-family: "JetBrains Mono";
+  font-family: "JetBrains Mono", sans-serif;
 }
 .h1 {
   font-weight: 800;
   font-size: 48px;
   line-height: 56px;
 }
+
+
+
+.subtitle{
+  font-size: 14px;
+  line-height: 20px;
+}
+.medium-text{
+  font-family: "JetBrains Mono", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+
+
+
 .btn {
   border: 1px solid var(--dark-color);
   border-radius: 2px;
@@ -54,6 +74,9 @@ body {
     z-index: -1;
   }
 }
+
+
+
 
 .tt-control-label {
   font-weight: 700;
