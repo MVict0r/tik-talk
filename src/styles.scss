@@ -7,6 +7,7 @@
   --primary-color: rgba(174, 122, 255, 1);
   --gray-color: rgba(95, 100, 109, 1);
   --dark-hover-color: #161616;
+  --light-transparent-color: rgba(255, 255, 255, 0.75);
 }
 
 *,
@@ -16,8 +17,12 @@
   margin: 0;
   padding: 0;
 }
+a {
+  text-decoration: none;
+}
 
 body {
+  height: 100dvh;
   background-image: url(/assets/imgs/background.jpg);
   color: var(--light-color);
   font-family: "JetBrains Mono", sans-serif;
@@ -27,22 +32,32 @@ body {
   font-size: 48px;
   line-height: 56px;
 }
+.h4 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 800;
+}
+.h6 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 800;
+}
 
-
-
-.subtitle{
+.subtitle {
   font-size: 14px;
   line-height: 20px;
 }
-.medium-text{
+.medium-text {
   font-family: "JetBrains Mono", sans-serif;
   font-size: 12px;
   font-weight: 500;
   line-height: 16px;
 }
-
-
-
+.regular {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+}
 
 .btn {
   border: 1px solid var(--dark-color);
@@ -75,9 +90,6 @@ body {
   }
 }
 
-
-
-
 .tt-control-label {
   font-weight: 700;
   font-size: 12px;
@@ -97,6 +109,44 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
-  font-family: "JetBrains Mono";
+  font-family: "JetBrains Mono", sans-serif;
   color: var(--light-color);
+}
+.tt-form-label{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.tt-form-label__text{
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--light-transparent-color);
+}
+.tt-form-input{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  border: none;
+  border-bottom: 1px solid var(--light-color);
+  height: 33px;
+  background: none;
+  color: var(--light-color);
+
+  &:focus-visible{
+    outline: none;
+  }
+}
+
+
+.skill-tag {
+  border: 1px solid var(--light-color);
+  border-radius: 2px;
+  display: inline;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 3px 8px 0 4px;
+  height: 24px;
+
 }
