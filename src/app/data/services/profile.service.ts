@@ -13,6 +13,7 @@ export class ProfileService {
   baseApiUrl = 'https://icherniakov.ru/yt-course/';
 
   me = signal<ProfileInterface | null>(null);
+  filteredProfiles = signal<ProfileInterface[]>([])
 
   getTestAccounts() {
     return this.http.get<ProfileInterface[]>(
@@ -41,8 +42,29 @@ export class ProfileService {
         )
       );
   }
-  
+
   patchProfile(profile: Partial<ProfileInterface>){
     return this.http.patch<ProfileInterface>(`${this.baseApiUrl}account/me`, profile);
+  }
+
+  uploadAvatar(file: File){
+    const fd: FormData = new FormData()
+    fd.append('image', file)
+
+    return this.http.post<ProfileInterface>(
+      `${this.baseApiUrl}account/upload_image`, fd
+    );
+  }
+
+  filterProfile(params: Record<string, any>){
+    return this.http
+      .get<PagebleInterface<ProfileInterface>>(
+        `${this.baseApiUrl}account/accounts`,
+        {
+          params
+        }
+      ).pipe(
+        tap(res => this.filteredProfiles.set(res.items)),
+      )
   }
 }

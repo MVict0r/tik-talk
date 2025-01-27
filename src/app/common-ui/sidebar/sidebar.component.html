@@ -10,7 +10,7 @@
   <ul class="main-menu-list">
     @for (item of menuItems; track $index) {
     <li>
-      <a [routerLink]="[item.link]" class="menu-item">
+      <a [routerLink]="[item.link]" routerLinkActive="active" class="menu-item">
         <svg [icon]="item.icon" class="menu-item-svg"></svg>
         <span> {{ item.label }} </span>
       </a>

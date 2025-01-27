@@ -92,3 +92,7 @@
   cursor: pointer;
   color: var(--primary-color);
 }
+.active{
+  background: var(--dark-hover-color);
+  color: var(--primary-color);
+}

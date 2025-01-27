@@ -18,6 +18,10 @@
 	display: grid;
 	place-content: center;
 	cursor: pointer;
+
+	&.fileover{
+		border: 1px solid var(--primary-color);
+	}
 }
 .dropzone-content{
 	display: flex;
