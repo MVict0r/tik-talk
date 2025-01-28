@@ -1,0 +1,9 @@
+@if (avatarUrl(); as avatarUrl) {
+  @if (avatarUrl) {
+    <img
+      [src]="avatarUrl | imgUrl"
+      alt="avatar"
+      class="profile-header__ava"
+    />
+  }
+}

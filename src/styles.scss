@@ -60,19 +60,28 @@ body {
 }
 
 .btn {
+  padding: 10px 20px;
+  line-height: 24px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--dark-color);
   border: 1px solid var(--dark-color);
   border-radius: 2px;
   background: var(--primary-color);
-  color: var(--dark-color);
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 24px;
-  padding: 10px 20px;
   cursor: pointer;
 
   &:hover {
     background: rgba(173, 122, 255, 0.932);
   }
+}
+.btn-icon{
+  width: 44px;
+  height: 44px;
+  color: var(--dark-color);
+  border: 1px solid var(--dark-color);
+  border-radius: 2px;
+  background: var(--primary-color);
+  cursor: pointer;
 }
 .btn-shadow {
   position: relative;
@@ -88,6 +97,11 @@ body {
     border-radius: 3px;
     z-index: -1;
   }
+}
+
+.svg16{
+  width: 16px;
+  height: 16px;
 }
 
 .tt-control-label {

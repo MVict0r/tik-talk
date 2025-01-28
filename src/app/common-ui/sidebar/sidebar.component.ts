@@ -7,6 +7,7 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
 import {ProfileService} from '../../data/services/profile.service';
 import {AsyncPipe} from '@angular/common';
 import {firstValueFrom} from 'rxjs';
+import {ImgUrlPipe} from "../../helpers/pipes/img-url.pipe";
 
 @Component({
   selector: 'app-sidebar',
@@ -17,6 +18,7 @@ import {firstValueFrom} from 'rxjs';
     RouterLink,
     AsyncPipe,
     RouterLinkActive,
+    ImgUrlPipe,
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',

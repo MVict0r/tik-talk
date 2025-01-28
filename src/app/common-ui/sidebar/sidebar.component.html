@@ -35,7 +35,7 @@
 
 <footer class="sidebar-footer">
   @if (me(); as me) { @if (me.avatarUrl) {
-  <img [src]="me.avatarUrl" [alt]="me.firstName" class="sidebar-ava" />
+  <img [src]="me.avatarUrl | imgUrl" [alt]="me.firstName" class="sidebar-ava" />
   } @else {
   <img
     src="assets/imgs/avatarka-null.png"
