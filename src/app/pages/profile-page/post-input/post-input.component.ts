@@ -1,4 +1,4 @@
-import {Component, inject, Renderer2} from '@angular/core';
+import {Component, inject, input, Renderer2} from '@angular/core';
 import {AvatarCircleComponent} from "../../../common-ui/avatar-circle/avatar-circle.component";
 import {ProfileService} from "../../../data/services/profile.service";
 import {SvgIconComponent} from "../../../common-ui/svg-icon/svg-icon.component";
@@ -20,9 +20,12 @@ import {firstValueFrom} from "rxjs";
 export class PostInputComponent {
   r2 = inject(Renderer2)
   postService: PostService = inject(PostService);
+
   profile = inject(ProfileService).me
 
   postText = ''
+  isCommentInput = input(false)
+  postId = input<number>(0)
 
   onTextAreaInput(event: Event) {
     const textarea = event.target as HTMLTextAreaElement
@@ -33,6 +36,19 @@ export class PostInputComponent {
 
   onCreatePost(){
       if(!this.postText) return
+
+    if (this.isCommentInput()){
+      firstValueFrom(
+        this.postService.createComment({
+          text: this.postText,
+          authorId: this.profile()!.id,
+          postId: this.postId()
+        })
+      ).then(() => {
+        this.postText = ''
+      })
+      return;
+    }
 
     firstValueFrom(
     this.postService.createPost({
