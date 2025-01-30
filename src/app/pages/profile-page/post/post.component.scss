@@ -4,7 +4,6 @@
   display: grid;
   grid-template-columns: 32px 1fr;
   grid-gap: 16px;
-  margin-bottom: 20px;
   padding: 20px;
 }
 
@@ -42,7 +41,8 @@
 }
 
 .post__comments-wrapper{
-  height: max-150px;
+  padding: 8px 0;
+  max-height: 150px;
   overflow-y: scroll;
   display: grid;
   grid-gap: 8px;

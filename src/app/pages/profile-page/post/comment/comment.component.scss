@@ -7,17 +7,14 @@
   display: grid;
   grid-gap: 8px;
 }
-.comment-text{
+.comment-header{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--light-color);
+  padding-right: 15px;
 }
 
-.comment-header{
-  color: var(--light-color);
-  display: flex;
-  justify-content: space-between;
-}
 .color-gray{
   color: var(--gray-color );
 }

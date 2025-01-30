@@ -162,5 +162,25 @@ body {
   line-height: 16px;
   padding: 3px 8px 0 4px;
   height: 24px;
+}
 
+
+/* Для самого скроллбара */
+::-webkit-scrollbar {
+  width: 8px; /* Ширина полосы прокрутки */
+  height: 8px; /* Высота полосы прокрутки */
+}
+/* Фон полосы прокрутки */
+::-webkit-scrollbar-track {
+  background: rgba(245, 245, 245, 1); /* Цвет фона */
+  border-radius: 24px; /* Закругление */
+}
+/* Ползунок (сам движущийся элемент) */
+::-webkit-scrollbar-thumb {
+  background: rgba(166, 166, 166, 1); /* Цвет ползунка */
+  border-radius: 24px; /* Закругление */
+}
+/* Ползунок при наведении */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

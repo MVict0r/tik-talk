@@ -9,6 +9,8 @@ import {canActivateAuth} from './auth/access_guard';
 import {
   SettingsPageComponent
 } from "./pages/settings-page/settings-page.component";
+import {ChatsPageComponent} from "./pages/chats/chats.component";
+import {chatsRoutes} from "./pages/chats/chatsRoutes";
 
 export const routes: Routes = [
   {
@@ -19,6 +21,9 @@ export const routes: Routes = [
       { path: 'profile/:id', component: ProfilePageComponent },
       { path: 'settings', component: SettingsPageComponent },
       { path: 'search', component: SearchPageComponent },
+      { path: 'chats',
+        loadChildren: () => chatsRoutes
+      },
     ],
     canActivate: [canActivateAuth],
   },

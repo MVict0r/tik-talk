@@ -19,7 +19,7 @@ export interface PostInterface {
 
 export interface CommentInterface {
   id: number
-  title: string
+  text: string
   author: {
     id: number
     username: string
