@@ -3,11 +3,14 @@
 
 :root {
   --dark-color: #000;
+  --dark-active-color: #161616;
   --light-color: #fff;
   --primary-color: rgba(174, 122, 255, 1);
   --gray-color: rgba(95, 100, 109, 1);
   --dark-hover-color: #161616;
   --light-transparent-color: rgba(255, 255, 255, 0.75);
+
+  --light-border: 1px solid var(--light-color);
 }
 
 *,
@@ -172,15 +175,15 @@ body {
 }
 /* Фон полосы прокрутки */
 ::-webkit-scrollbar-track {
-  background: rgba(245, 245, 245, 1); /* Цвет фона */
+  background: none; /* Цвет фона */
   border-radius: 24px; /* Закругление */
 }
 /* Ползунок (сам движущийся элемент) */
 ::-webkit-scrollbar-thumb {
-  background: rgba(166, 166, 166, 1); /* Цвет ползунка */
+  background: none; /* Цвет ползунка */
   border-radius: 24px; /* Закругление */
 }
 /* Ползунок при наведении */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: none;
 }

@@ -1,1 +1,18 @@
-<p>chats-btn works!</p>
+@if (chat(); as chat) {
+  <app-avatar-circle
+    class="size32"
+    [avatarUrl]="chat.userFrom.avatarUrl"
+  ></app-avatar-circle>
+
+  <div class="last-message__wrapper">
+    <div class="name-date medium-text">
+      <span class="last-name">
+        {{chat.userFrom.lastName}} {{chat.userFrom.firstName}}
+      </span>
+
+      <span class="date">{{chat.createdAt}}</span>
+    </div>
+
+    <div class="medium-text">{{chat.message ?? '....' }}</div>
+  </div>
+}

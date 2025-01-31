@@ -9,7 +9,6 @@ import {canActivateAuth} from './auth/access_guard';
 import {
   SettingsPageComponent
 } from "./pages/settings-page/settings-page.component";
-import {ChatsPageComponent} from "./pages/chats/chats.component";
 import {chatsRoutes} from "./pages/chats/chatsRoutes";
 
 export const routes: Routes = [
