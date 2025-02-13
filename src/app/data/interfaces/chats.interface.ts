@@ -5,6 +5,7 @@ export interface ChatInterface {
   userFirst: ProfileInterface
   userSecond: ProfileInterface
   messages: MessageInterface[]
+  companion?:ProfileInterface
 }
 
 export interface MessageInterface {

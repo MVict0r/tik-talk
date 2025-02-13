@@ -27,6 +27,7 @@ export class ChatWorkspaceComponent {
 
   activeChat$ = this.route.params
     .pipe(
-      switchMap(({id}) => this.chatService.getChatById(id))
+      switchMap(({id}) =>
+        this.chatService.getChatById(id))
     )
 }

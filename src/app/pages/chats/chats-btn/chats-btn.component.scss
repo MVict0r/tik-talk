@@ -23,8 +23,15 @@
   color: var(--light-text);
 }
 .last-name{
-  color: var(--light-transparent-color);
+  color: var(--light-color);
 }
 
+.name-date{
+  display: flex;
+  justify-content: space-between;
+}
 
+.date, .message-preview{
+  color: var(--light-transparent-color);
+}
 

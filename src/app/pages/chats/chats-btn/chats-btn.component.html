@@ -10,9 +10,11 @@
         {{chat.userFrom.lastName}} {{chat.userFrom.firstName}}
       </span>
 
-      <span class="date">{{chat.createdAt}}</span>
+      <span class="date">
+        {{chat.createdAt | date: 'dd.mm'}}
+      </span>
     </div>
 
-    <div class="medium-text">{{chat.message ?? '....' }}</div>
+    <div class="medium-text message-preview">{{chat.message ?? '....' }}</div>
   </div>
 }
