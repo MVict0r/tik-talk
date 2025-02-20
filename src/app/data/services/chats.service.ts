@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import {inject, Injectable, signal} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {
   ChatInterface,
@@ -14,6 +14,8 @@ import { map } from 'rxjs';
 export class ChatsService {
   http = inject(HttpClient);
   me = inject(ProfileService).me;
+
+  activeChatMessages = signal<MessageInterface[]>([])
 
   chatsUrl = 'https://icherniakov.ru/yt-course/chat/';
   messageUrl = 'https://icherniakov.ru/yt-course/message/';
@@ -31,13 +33,7 @@ export class ChatsService {
   getChatById(chatId: number) {
     return this.http.get<ChatInterface>(`${this.chatsUrl}${chatId}`).pipe(
       map((chat) => {
-        return {
-          ...chat,
-          companion:
-            chat.userFirst.id === this.me()!.id
-              ? chat.userSecond
-              : chat.userFirst,
-          messages: chat.messages.map((message) => {
+        const patchedMessages = chat.messages.map((message) => {
             return {
               ...message,
               user:
@@ -46,7 +42,17 @@ export class ChatsService {
                   : chat.userSecond,
               isMain: message.userFromId === this.me()!.id,
             };
-          }),
+          })
+
+        this.activeChatMessages.set(patchedMessages)
+
+        return {
+          ...chat,
+          companion:
+            chat.userFirst.id === this.me()!.id
+              ? chat.userSecond
+              : chat.userFirst,
+          messages: patchedMessages
         };
       })
     );

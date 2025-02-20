@@ -20,20 +20,11 @@ export class ChatWorkspaceMessagesWrapperComponent {
 
   chat = input.required<ChatInterface>()
 
-  messages = signal<MessageInterface[]>([])
-
-  ngOnInit(){
-    this.messages.set(this.chat().messages)
-  }
+  messages = this.chatServices.activeChatMessages
 
   async onSendMessage(messageText: string){
     await firstValueFrom(
       this.chatServices.sendMessage(this.chat().id, messageText)
     )
-
-    const chat = await firstValueFrom(
-      this.chatServices.getChatById(this.chat().id)
-    )
-    this.messages.set(chat.messages)
   }
 }
